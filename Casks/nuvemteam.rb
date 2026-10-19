@@ -12,13 +12,8 @@ cask "nuvemteam" do
   # O app se atualiza sozinho (version :latest: o brew não o reinstala a cada upgrade).
   depends_on macos: :ventura
 
+  # Assinado com o Developer ID e notarizado (app#9): o Gatekeeper abre sem passo manual.
   app "nuvem.team.app"
-
-  # Sem a conta Apple, o app não é notarizado: sem a quarentena, o Gatekeeper não barra a
-  # primeira abertura.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/nuvem.team.app"]
-  end
 
   zap trash: [
     "~/Library/Application Support/nuvemteam",
