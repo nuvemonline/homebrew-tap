@@ -13,12 +13,6 @@ cask "nuvemworks" do
   app "nuvem.works.app"
   binary "#{appdir}/nuvem.works.app/Contents/MacOS/nuvemworks"
 
-  # O app ainda não é notarizado pela Apple: sem a quarentena, o Gatekeeper não barra a
-  # primeira abertura.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/nuvem.works.app"]
-  end
-
   zap trash: [
     "~/Library/Application Support/nuvemworks",
     "~/Library/Logs/nuvemworks",
