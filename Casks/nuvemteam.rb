@@ -14,6 +14,8 @@ cask "nuvemteam" do
 
   # Assinado com o Developer ID e notarizado (app#9): o Gatekeeper abre sem passo manual.
   app "nuvem.team.app"
+  # O CLI (D214): o launcher repassa ao bundle do CLI dentro do app, que lê a sessão do app.
+  binary "#{appdir}/nuvem.team.app/Contents/Helpers/nuvemteam"
 
   zap trash: [
     "~/Library/Application Support/nuvemteam",
