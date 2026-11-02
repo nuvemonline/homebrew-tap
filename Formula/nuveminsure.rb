@@ -4,18 +4,18 @@
 class Nuveminsure < Formula
   desc "CLI do nuvem.insure: backup centralizado pelo terminal e por agentes de IA"
   homepage "https://nuvem.insure/"
-  version "0.3.0"
+  version "0.4.0"
 
   # Binários assinados (ECDSA) e, no macOS, notarizados; servidos pela api do produto.
   if OS.mac?
     url "https://api.nuvem.insure/cli/download/v#{version}/darwin/arm64"
-    sha256 "325cdf5ae75b19240a30704ca522094cc1c5e79ec37211a7a9a762df3c585eb2"
+    sha256 "e4590b76db12185063a87132d82ddfcd60407810bd201edc2bce7dcf4b655507"
   elsif Hardware::CPU.arm?
     url "https://api.nuvem.insure/cli/download/v#{version}/linux/arm64"
-    sha256 "82769442a0bbfb82f9ea9f3f4f46476579896f97304a975aad17b5e5926ae58b"
+    sha256 "1df82e44748d5b7cd91fd6447cd6385d83f2a7958e98edba7c8a3df74ac12ed5"
   else
     url "https://api.nuvem.insure/cli/download/v#{version}/linux/amd64"
-    sha256 "3048036b998c546121d97c6e5e80b7e702960e1ec02fb2ab303b67c51333c66f"
+    sha256 "b53d9240bc445098d6446d02ad4a5ed0de01efb569544e027d66efe8f945329f"
   end
 
   livecheck do
