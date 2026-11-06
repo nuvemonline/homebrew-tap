@@ -4,18 +4,18 @@
 class Nuvemcash < Formula
   desc "CLI do nuvem.cash: gestão de custos de nuvem pelo terminal e por agentes de IA"
   homepage "https://nuvem.cash/"
-  version "0.1.0"
+  version "0.1.1"
 
   # Binários assinados (ECDSA) e, no macOS, notarizados; servidos pela api do produto.
   if OS.mac?
     url "https://api.nuvem.cash/cli/download/v#{version}/darwin/arm64"
-    sha256 "71e3fa564ef72164d27fcb344b2d8483ff8bb07bf471c9d5fec661a854bdbd1a"
+    sha256 "208453e0fab54a3d28bc28608c9573ad373bc9bd7a85816c26a6918b0e41caf4"
   elsif Hardware::CPU.arm?
     url "https://api.nuvem.cash/cli/download/v#{version}/linux/arm64"
-    sha256 "153acbd553be6f4920003ead07aad847ff0d8f40f958ac8133add1e169720917"
+    sha256 "952c90b6ce8de15df6a7a76252502c036909f92524e109bd14b1fd8c5c4c248e"
   else
     url "https://api.nuvem.cash/cli/download/v#{version}/linux/amd64"
-    sha256 "080f54305f177af7dcacbebe4b9b3f25dfa7526ea36f314676ae3310e0d038df"
+    sha256 "bc9dfd90703a0a67a6fd851108085e39aeaa233ba185ef8ee75dc9b7ec3faa48"
   end
 
   livecheck do
