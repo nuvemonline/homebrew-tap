@@ -9,13 +9,13 @@ class Nuvemcash < Formula
   # Binários assinados (ECDSA) e, no macOS, notarizados; servidos pela api do produto.
   if OS.mac?
     url "https://api.nuvem.cash/cli/download/v#{version}/darwin/arm64"
-    sha256 ""
+    sha256 "71e3fa564ef72164d27fcb344b2d8483ff8bb07bf471c9d5fec661a854bdbd1a"
   elsif Hardware::CPU.arm?
     url "https://api.nuvem.cash/cli/download/v#{version}/linux/arm64"
-    sha256 ""
+    sha256 "153acbd553be6f4920003ead07aad847ff0d8f40f958ac8133add1e169720917"
   else
     url "https://api.nuvem.cash/cli/download/v#{version}/linux/amd64"
-    sha256 ""
+    sha256 "080f54305f177af7dcacbebe4b9b3f25dfa7526ea36f314676ae3310e0d038df"
   end
 
   livecheck do
